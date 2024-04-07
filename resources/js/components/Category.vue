@@ -57,7 +57,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add more dashboard cards as needed -->
                 </div>
             </div>
         </div>
@@ -133,14 +132,6 @@ export default {
         },
         addCategory() {
 
-            const token = localStorage.getItem('token');
-            if (!token) {
-                console.error('Authorization Token not found');
-                return;
-            }
-
-            const headers = { Authorization: `Bearer ${token}` };
-
             axios.post('/api/categories/store', { name: this.newCategoryName })
                 .then(response => {
                     this.categories.push(response.data);
@@ -154,6 +145,7 @@ export default {
 
                 });
         },
+
         updateCategory() {
             axios.put(`/api/categories/${this.selectedCategory.id}/update`, { name: this.editCategoryName })
                 .then(response => {
@@ -169,7 +161,7 @@ export default {
                 });
         },
         deleteCategory(id) {
-            axios.delete(`/api/categories/${id}/destroy`)
+            axios.delete('/api/categories/${id}/destroy')
                 .then(response => {
                     this.categories = this.categories.filter(category => category.id !== id);
                     this.fetchCategories();
@@ -203,7 +195,3 @@ export default {
     }
 };
 </script>
-
-<style scoped>
-/* Add your component styles here */
-</style>

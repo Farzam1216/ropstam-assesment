@@ -17,7 +17,6 @@
                 Dashboard
               </div>
             </div>
-            <!-- Add more dashboard cards as needed -->
           </div>
         </div>
       </div>
@@ -36,6 +35,3 @@
   };
   </script>
 
-  <style scoped>
-  /* Add custom styles here */
-  </style>

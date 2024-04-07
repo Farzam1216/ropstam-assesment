@@ -51,7 +51,6 @@ export default {
                 this.$router.push('/dashboard');
 
             } catch (error) {
-                // Handle login error
                 if (error.response && error.response.status === 401) {
                     this.errorMessage = 'Invalid email or password. Please try again.';
                 } else {

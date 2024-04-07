@@ -33,33 +33,19 @@
     },
     methods: {
       logout() {
-        // Perform logout logic here
-        // For example, clear authentication token and redirect to login page
         localStorage.removeItem('token');
         this.$router.push('/login');
       },
       fetchUserName() {
-        // Fetch user name from the backend after successful login
-        // For example, using an API request
-        // axios.get('/api/user')
-        //   .then(response => {
-        //     this.userName = response.data.name;
-        //   })
-        //   .catch(error => {
-        //     console.error(error);
-        //   });
+
       }
     },
     mounted() {
-      // Check authentication status when component is mounted
       this.loggedIn = localStorage.getItem('token') !== null;
       if (this.loggedIn) {
-        this.fetchUserName(); // Fetch user name if user is logged in
+        this.fetchUserName();
       }
     }
   };
   </script>
 
-  <style scoped>
-  /* Add custom styles here */
-  </style>
